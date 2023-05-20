@@ -37,9 +37,11 @@ const Card = () => {
          )}
 
          <div className="checkOut">
-            <span>Priced To Checkout</span>
-            <label htmlFor=''>$ 240</label>
-         </div>
+            <button>
+             <span>Priced To Checkout</span>
+             <label htmlFor=''>$ 240</label>
+            </button>
+          </div>
       </div>
     </>
   )

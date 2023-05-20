@@ -4,6 +4,8 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import './header.css';
 import Card from './Card';;
 import User from './User';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
     window.addEventListener("scroll", function(){
@@ -20,7 +22,9 @@ const Header = () => {
      <header className='header'>
       <div className="scontainer flex">
         <div className="logo">
-          <img src={Medicine} alt="" />
+          <Link to='/'>
+            <img src={Medicine} alt="" />
+          </Link>
         </div>
         <div className="search flex">
           <AiOutlineSearch className='searchIcon'/>

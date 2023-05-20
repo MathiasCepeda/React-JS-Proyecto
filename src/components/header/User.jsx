@@ -6,6 +6,7 @@ import { GrHelp } from 'react-icons/gr';
 import Chico from '../../assets/images/Chico.png';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BiLogOut } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const User = () => {
   
@@ -29,20 +30,24 @@ const User = () => {
         <div className="openProfile boxItems" onClick={close}>
           <div className="img">
             <div className="img">
+            <Link to='/account'>
             <img src={Chico}  alt="" />
+            </Link>
             </div>
             <div className="text">
               <h4>Rogelio delpo</h4>
               <label htmlFor=''>Los Angeles,CA</label>
             </div>
           </div>
+           <Link to='/login'>
            <button className='box'>
              <IoSettingsOutline className='icon'/>
              <h4>My Account</h4>
             </button>
+            </Link>
             <button className='box'>
              <BsBagCheck className='icon'/>
-             <h4>My Account</h4>
+             <h4>My Order</h4>
             </button>
             <button className='box'>
              <AiOutlineHeart className='icon'/>
