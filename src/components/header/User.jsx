@@ -7,6 +7,9 @@ import Chico from '../../assets/images/Chico.png';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BiLogOut } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/authSlice';
+
 
 const User = () => {
   
@@ -15,6 +18,12 @@ const User = () => {
    
    const close = () => {
     setProfileOpen(null)
+  }
+
+  const dispatch = useDispatch()
+  const logoutHandler = (e) =>{
+    e.preventDefault()
+    dispatch(authActions.logout())
   }
   
   return (
@@ -57,7 +66,7 @@ const User = () => {
              <GrHelp className='icon'/>
              <h4>Help</h4>
             </button>
-            <button className='box'>
+            <button className='box' onClick={logoutHandler}>
              <BiLogOut className='icon'/>
              <h4>Log Out</h4>
             </button>

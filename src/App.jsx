@@ -6,21 +6,31 @@ import Footer from "./components/footer/Footer";
 import Regsiter from "./pages/login/Regsiter";
 import Login from "./pages/login/Login";
 import Account from "./pages/account/Account";
+import { useSelector } from "react-redux";
 
 function App() {
   
+  const isLoggIn = useSelector((state)=> state.auth.isLoggIn)
+  const cartItems = useSelector((state)=>state.cart.itemsList)
+  console.log(cartItems)
 
   return (
+    <>
+    {isLoggIn && (
+
+    
     <BrowserRouter>
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path="/regsiter" element={<Regsiter/>}/>
-        <Route path="/login" element={<Login/>}/>
         <Route path="/account" element={<Account/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
+    )}
+    {!isLoggIn && <Login/>}
+    </>
   )
 }
 
